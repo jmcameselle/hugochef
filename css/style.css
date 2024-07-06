@@ -2482,23 +2482,7 @@ h3 {
     margin-bottom: 20px;
   }
 }
-
-/* line 69, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_footer.scss */
-.footer .footer_top .footer_widget .footer_logo {
-  font-size: 22px;
-  font-weight: 400;
-  color: #fff;
-  text-transform: capitalize;
-  margin-bottom: 40px;
-}
-
-@media (max-width: 767px) {
-  /* line 69, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_footer.scss */
-  .footer .footer_top .footer_widget .footer_logo {
-    margin-bottom: 20px;
-  }
-}
-
+ 
 /* line 79, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_footer.scss */
 .footer .footer_top .footer_widget p {
   color: #777777;
