@@ -1,0 +1,604 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Títulos/enunciados más finos */
+h1, h2, h3 {
+    font-weight: normal;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(68, 68, 68, 0.9);
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+    transition: background-color 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: rgba(68, 68, 68, 1);
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.navbar .nav-links li {
+    margin-left: 20px;
+}
+
+.navbar .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links li a:hover {
+    color: #e0a80d;
+}
+
+/* Hamburger menu for mobile */
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+    background: url('hero-image.jpg') no-repeat center center/cover;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.hero .cta {
+    padding: 10px 30px;
+    background-color: #e0a80d;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero .cta:hover {
+    background-color: #d08e06;
+}
+
+/* Menus Section */
+.menus {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.menus h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.menu-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.menu-item {
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #e0a80d;
+}
+
+.menu-item p {
+    font-size: 16px;
+}
+
+/* Contacto Section */
+.contacto {
+    padding: 60px 20px;
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+}
+
+.contacto h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.contacto p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.contacto form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contacto input, .contacto textarea {
+    width: 80%;
+    max-width: 500px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+.contacto button {
+    padding: 10px 30px;
+    background-color: #e0a80d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contacto button:hover {
+    background-color: #d08e06;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: #bbb;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+footer p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+footer p a {
+    color: #e0a80d;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer p a:hover {
+    color: #d08e06;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #444;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        z-index: 999;
+    }
+
+    .navbar .nav-links.active {
+        display: flex;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .menu-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-item {
+        width: 80%;
+    }
+}
+
+/* Estilos para la sección de Avisos Legales */
+.legal {
+    padding: 60px 20px;
+    background-color: #f0f0f0;
+    color: #333;
+    text-align: center;
+}
+
+.legal h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.legal p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.legal p a {
+    color: #e0a80d;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.legal p a:hover {
+    color: #d08e06;
+}
+
+/* Estilos para la sección de Reseñas */
+.reseñas {
+    padding: 60px 20px;
+    background-color: #fff;
+    color: #444;
+    text-align: center;
+    width: 100%;
+}
+
+.reseñas h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.reseñas-carrusel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.reseña {
+    display: none;
+    font-size: 20px;
+    line-height: 1.5;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.reseña.active {
+    display: block;
+}
+
+.reseña span {
+    display: block;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #e0a80d;
+}
+
+/* Estilos para la sección de Galería de Fotos */
+.galeria {
+    padding: 60px 20px; /* Espaciado para una presentación adecuada */
+    background-color: #fff; /* Fondo blanco para un look limpio */
+    color: #333;
+    text-align: center;
+}
+
+.galeria h2 {
+    font-size: 36px; /* Tamaño de fuente más grande para mayor impacto */
+    margin-bottom: 40px; /* Espacio adecuado debajo del título */
+    color: #444; /* Color de texto ligeramente oscuro para contraste */
+    font-family: 'Georgia', serif; /* Fuente elegante para los títulos */
+}
+
+.foto-grid {
+    display: flex;
+    justify-content: center; /* Centra las fotos horizontalmente */
+    flex-wrap: wrap; /* Permite el ajuste en múltiples filas */
+    gap: 20px; /* Espacio entre las fotos */
+}
+
+.foto-item {
+    width: 100%;
+    max-width: 350px; /* Tamaño máximo ajustado para mejor visualización */
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px; /* Bordes redondeados más sutiles */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más sutil */
+}
+
+.foto-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px; /* Bordes redondeados en las imágenes */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.foto-item img:hover {
+    transform: scale(1.03); /* Efecto de zoom menos pronunciado */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada en hover */
+}
+
+/* Estilos específicos para el menú */
+.menu-item {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.menu-item h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.menu-item p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.menu-details {
+    margin-top: 20px;
+}
+
+.menu-category {
+    margin-bottom: 30px;
+}
+
+.menu-category h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #e0a80d;
+}
+
+.menu-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-category ul li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.menu-category ul li .allergen {
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.menu-category ul li .allergen img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-left: 5px;
+    opacity: 0.8;
+}
+
+.gallery {
+    padding: 60px 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.gallery h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.gallery-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.gallery-images img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Asegúrate de que no se superponga con la navbar */
+body {
+    padding-top: 80px; /* Ajusta según el alto de tu navbar */
+}
+
+
+/* Estilos para la sección de contacto */
+.contacto {
+    padding: 60px 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-details {
+    margin-bottom: 40px;
+}
+
+.contact-info {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-info h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #e0a80d;
+}
+
+.contact-info p {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #555;
+}
+
+.contact-info a {
+    color: #e0a80d;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.map {
+    margin-bottom: 40px;
+}
+
+.map iframe {
+    border: 0;
+    border-radius: 10px;
+    width: 100%;
+    height: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.social-media {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.social-media h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #e0a80d;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+}
+
+.social-icon img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.social-icon span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: #e0a80d;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Asegúrate de que no se superponga con la navbar */
+body {
+    padding-top: 80px; /* Ajusta según el alto de tu navbar */
+}
